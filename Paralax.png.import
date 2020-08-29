@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TileSet.png-f0df17d6d78ce913b23f007edae0b5a6.stex"
+path="res://.import/Paralax.png-e3fa61dcd17b45bd53bd938f1ceb4505.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/TileSet.png"
-dest_files=[ "res://.import/TileSet.png-f0df17d6d78ce913b23f007edae0b5a6.stex" ]
+source_file="res://Paralax.png"
+dest_files=[ "res://.import/Paralax.png-e3fa61dcd17b45bd53bd938f1ceb4505.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

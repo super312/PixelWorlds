@@ -22,7 +22,7 @@ func _physics_process(delta):
 	var friction = false
 	var x = 0
 	
-	if Input.is_action_just_pressed("ui_select"):
+	if Input.is_action_just_pressed("ui_select") and body != null:
 		if body.has_method("interact"):
 			body.interact()
 	

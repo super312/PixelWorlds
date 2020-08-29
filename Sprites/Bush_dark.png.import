@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TileSet.png-f0df17d6d78ce913b23f007edae0b5a6.stex"
+path="res://.import/Bush_dark.png-51cf5faede8b97263ea4e83a88c6872b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/TileSet.png"
-dest_files=[ "res://.import/TileSet.png-f0df17d6d78ce913b23f007edae0b5a6.stex" ]
+source_file="res://Sprites/Bush_dark.png"
+dest_files=[ "res://.import/Bush_dark.png-51cf5faede8b97263ea4e83a88c6872b.stex" ]
 
 [params]
 
