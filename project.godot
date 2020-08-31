@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="PixelWorlds"
-run/main_scene="res://Maps/TestMap.tscn"
+run/main_scene="res://Maps/Menu.tscn"
 config/icon="res://icon.png"
 
 [display]

@@ -11,10 +11,16 @@ onready var anim = $Anim
 onready var spr = $Sprite
 onready var but = $Xbutton
 
+export var cx_limit = 10000000
+export var cy_limit = 1224
+
 var state = 0
 var dir = 0
 
 var body = null
+
+func _ready():
+	$Camera2D.limit_bottom = cy_limit
 
 func _physics_process(delta):
 	
@@ -45,7 +51,7 @@ func _physics_process(delta):
 		if Input.is_action_pressed("ui_down") and Input.is_action_just_pressed("ui_up"):
 			translate(Vector2(0,1))
 		elif Input.is_action_just_pressed("ui_up"):
-			vector.y -= 550
+			vector.y -= 750
 		if friction:
 			vector.x = lerp(vector.x, 0, 0.3)
 	else:
