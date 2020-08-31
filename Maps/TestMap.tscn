@@ -1,12 +1,15 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Maps/Tilesets/TileSetResource.tres" type="TileSet" id=2]
 [ext_resource path="res://Sprites/Flowers.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/tree.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Bush.png" type="Texture" id=5]
+[ext_resource path="res://interactables/Lever_red.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Paralax.png" type="Texture" id=7]
 [ext_resource path="res://Maps/ParallaxLayer.gd" type="Script" id=8]
+[ext_resource path="res://Maps/testinitr.gd" type="Script" id=9]
+[ext_resource path="res://Sprites/Bush_dark.png" type="Texture" id=10]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 25.9843
@@ -58,3 +61,13 @@ script = ExtResource( 8 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 7 )
 centered = false
+
+[node name="Lever_red" parent="." instance=ExtResource( 6 )]
+position = Vector2( 488.052, 343.925 )
+interact = NodePath("../Bush_dark")
+lever_type = 1
+
+[node name="Bush_dark" type="Sprite" parent="."]
+position = Vector2( 605.467, 398.256 )
+texture = ExtResource( 10 )
+script = ExtResource( 9 )
