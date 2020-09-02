@@ -16,11 +16,13 @@ export var cy_limit = 1224
 
 var state = 0
 var dir = 0
+var can_move = true
 
 var body = null
 
 func _ready():
 	$Camera2D.limit_bottom = cy_limit
+	$Camera2D.limit_right = cx_limit
 
 func _physics_process(delta):
 	
@@ -32,7 +34,10 @@ func _physics_process(delta):
 		if body.has_method("interact"):
 			body.interact()
 	
-	if is_on_floor():
+	if Input.is_action_just_pressed("reset"):
+		get_tree().reload_current_scene()
+	
+	if is_on_floor() and can_move:
 		
 		if Input.is_action_pressed("ui_left"):
 			vector.x = max(vector.x - accel, -(speed * delta * 30))
@@ -90,6 +95,9 @@ func anim():
 			else:
 				anim.play("Jump_down")
 	pass
+
+func iof():
+	return is_on_floor()
 
 func _on_Interaction_area_body_entered(_body):
 	body = _body

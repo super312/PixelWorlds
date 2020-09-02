@@ -1,12 +1,11 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Sprites/Flowers.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/tree.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Bush.png" type="Texture" id=3]
-[ext_resource path="res://Paralax.png" type="Texture" id=4]
+[ext_resource path="res://ParallaxBackground.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Player/Idle0.png" type="Texture" id=5]
 [ext_resource path="res://Maps/Tilesets/TileSetResource.tres" type="TileSet" id=6]
-[ext_resource path="res://Maps/ParallaxLayer.gd" type="Script" id=7]
 [ext_resource path="res://Sprites/ExtraTiles.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/tree_dark.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/Bush_dark.png" type="Texture" id=10]
@@ -14,7 +13,7 @@
 [ext_resource path="res://Sprites/Flowers_dark.png" type="Texture" id=12]
 [ext_resource path="res://BlackScreen.png" type="Texture" id=13]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "Fade-in"
 length = 0.5
 tracks/0/type = "bezier"
@@ -58,7 +57,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.5 )
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "Fade-out"
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("BlackScreen:modulate:r")
@@ -150,17 +149,7 @@ position = Vector2( 805.369, 445.421 )
 scale = Vector2( 2, 1.5 )
 texture = ExtResource( 9 )
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-scroll_ignore_camera_zoom = true
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2( 2048, 0 )
-script = ExtResource( 7 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-scale = Vector2( 2, 2 )
-texture = ExtResource( 4 )
-centered = false
+[node name="ParallaxBackground" parent="." instance=ExtResource( 4 )]
 
 [node name="Idle0" type="Sprite" parent="."]
 position = Vector2( 159.785, 458.005 )
@@ -197,7 +186,7 @@ region_enabled = true
 region_rect = Rect2( 33.3228, -0.273184, 35.9339, 36.9606 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 15.0
+wait_time = 10.0
 autostart = true
 
 [node name="BlackScreen" type="Sprite" parent="."]
@@ -207,6 +196,6 @@ texture = ExtResource( 13 )
 centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Fade-in = SubResource( 2 )
-anims/Fade-out = SubResource( 3 )
+anims/Fade-in = SubResource( 1 )
+anims/Fade-out = SubResource( 2 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

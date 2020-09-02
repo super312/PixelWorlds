@@ -16,8 +16,9 @@ func interact():
 		itr.update()
 
 func _on_Button_body_entered(body):
-	state = true
-	interact()
+	if !state:
+		state = true
+		interact()
 func _on_Button_body_exited(body):
 	if !stay:
 		state = false
